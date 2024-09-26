@@ -318,7 +318,7 @@ print(i1.mensaje())
 print(i2.mensaje())
 
 
-#20
+##20
 class Empleado():
     def __init__(self,nombre,salario):
         self.nombre=nombre
