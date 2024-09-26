@@ -263,7 +263,15 @@ class vehiculo():
         return f"La marca es {self.marca} y el modelo es {self.modelo}"
     
 class Coche(vehiculo):
+    def __init__(self, marca, modelo,velocidad,ruedas):
+        super().__init__(marca, modelo)
+        self.velocidad=velocidad
+        self.ruedas=ruedas
     
+    def ruedas(self):
+        return "El coche tiene ",self.ruedas
+    
+            
     
     
 
