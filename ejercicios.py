@@ -230,7 +230,7 @@ class FiguraGeometrica():
         self.altura=altura
         
     def area(self):
-            return "Suscribir el metodo"        
+            return "Sobrescribir el metodo"        
 
 class Rectangulo(FiguraGeometrica):
     def area(self):
