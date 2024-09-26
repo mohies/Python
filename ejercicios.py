@@ -1,5 +1,4 @@
 
-'''
 #1
 print("Hola mundo")
 
@@ -286,9 +285,77 @@ v2=Coche("Toyota","Subaru")
 print(v1.dato())
 print(v2.dato())
 
-'''
+
 
 #19
 class InstrumentoMusical():
-    def __init__(self):
+    def __init__(self,nombre):
+        self.nombre=nombre
+    
+    def mensaje(self):
+        return "Estas tocando un instrumento "
+    
+
+class Piano(InstrumentoMusical):
+    
+    def __init__(self, marca):
+        self.marca=marca
+    
+    def mensaje(self):
+        return super().mensaje() +"que es el piano de marca "+self.marca
+
+class Guitarra(InstrumentoMusical):
+    def __init__(self, marca):
+        self.marca=marca
+    def mensaje(self):
+        return super().mensaje()+"que es la guitarra de marca "+self.marca
+    
+
+i1=Guitarra("Alhambra")  
+i2=Piano("Steinway") 
+
+print(i1.mensaje())
+print(i2.mensaje())
+
+
+#20
+class Empleado():
+    def __init__(self,nombre,salario):
+        self.nombre=nombre
+        self.salario=salario
+    def calcular_salario_anual(self):
+        return "El salario anual seria "+str(self.salario * 12)
+
+class Gerente(Empleado):
+    def __init__(self, nombre, salario,funcion="Lider"):
+        super().__init__(nombre, salario)
+        self.funcion=funcion
+    
+    def trabajo(self):
+        return "La funcion del Gerente es ser " + self.funcion
+    
+    def calcular_salario_anual(self):
+        return super().calcular_salario_anual() + " euros anuales este seria el salario del Gerente"
+    
+class Programador(Empleado):
+    def __init__(self, nombre, salario,funcion="Programar"):
+        super().__init__(nombre, salario)
+        self.funcion=funcion
         
+    def trabajo(self):
+        return "La funcion del Gerente es ser " + self.funcion
+        
+    def calcular_salario_anual(self):
+        return super().calcular_salario_anual() +" euros anuales este seria el salario del Programador"
+
+e1=Programador("Pepe",2000)
+e2=Gerente("Felipe",3000)
+
+print(e1.trabajo())
+print(e1.calcular_salario_anual())
+print(e2.trabajo())
+print(e2.calcular_salario_anual())
+
+
+        
+     
