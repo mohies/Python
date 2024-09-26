@@ -252,7 +252,7 @@ f2 = Triangulo(10, 10)
 print(f1.area())
 print(f2.area())
 
-'''
+
 #18 
 class vehiculo():
     def __init__(self,marca,modelo):
@@ -263,24 +263,32 @@ class vehiculo():
         return f"La marca es {self.marca} y el modelo es {self.modelo}"
     
 class Coche(vehiculo):
-    def __init__(self, marca, modelo,velocidad,ruedas):
+    def __init__(self, marca, modelo,velocidad=120,ruedas=4):
         super().__init__(marca, modelo)
         self.velocidad=velocidad
         self.ruedas=ruedas
     
-    def ruedas(self):
-        return "El coche tiene ",self.ruedas
+    def dato(self):
+        return "El coche tiene ",self.ruedas,"y puede llegar a unos ",self.velocidad,"km/h"
     
-            
+class bicicleta(vehiculo):
+    def __init__(self, marca, modelo,velocidad=20,ruedas=2):
+        super().__init__(marca, modelo)
+        self.velocidad=velocidad
+        self.ruedas=ruedas
     
+    def dato(self):
+        return "La bici tiene ",self.ruedas," ruedas y va a una velocidad de ",self.velocidad,"km/h"
     
+v1=bicicleta("CONOR","BIKE 140")
+v2=Coche("Toyota","Subaru")
 
+print(v1.dato())
+print(v2.dato())
 
-            
-    
-    
-    
+'''
 
-
-     
-
+#19
+class InstrumentoMusical():
+    def __init__(self):
+        
